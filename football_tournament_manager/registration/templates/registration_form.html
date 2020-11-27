@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+
+    <!--    bootstrap 4-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+            integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"
+            integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf"
+            crossorigin="anonymous"></script>
+    <!-- font awesome icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+
+    {% load static %}
+    <script src="{% static 'js/registration_form.js' %}" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body>
+
+<div class="text-center">
+    <h3><u>Registration Form</u></h3>
+</div>
+<div class="mr-5 ml-5">
+    <div class="form-group">
+        <label for="team-name">Name of The Team</label>
+        <input type="text" class="form-control" id="team-name" name="team-name">
+    </div>
+    <div class="form-group">
+        <label for="manager-name">Name of Manager</label>
+        <input type="text" class="form-control" id="manager-name" name="manager-name">
+    </div>
+    <div class="form-group">
+        <label for="coach-name">Name of Coach</label>
+        <input type="text" class="form-control" id="coach-name" name="coach-name">
+    </div>
+    <div class="form-group" id="players-list">
+        <label for="btn-add-player">Add players</label>
+        <button type="button" style="border:none" id="btn-add-player"><i
+                class="far fa-plus-square"></i></button>
+        <div>
+
+        </div>
+    </div>
+
+    <button id="btn-register" class="btn btn-primary">Register</button>
+</div>
+
+{% csrf_token %}
+<script>
+const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+</script>
+</body>
+
+</html>
